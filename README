@@ -1,0 +1,50 @@
+NAME
+    Dist::Zilla::Plugin::BumpVersionFromGit - provide a version number by
+    bumping the last git release tag
+
+VERSION
+    version 0.001
+
+SYNOPSIS
+    In your F<dist.ini>:
+
+         [BumpVersionFromGit]
+         version_regexp  = ^v(.+)$   ; this is the default
+
+DESCRIPTION
+    This does the Dist::Zilla::Role::VersionProvider role. It finds the last
+    version number from tags and increments it as the new version used by
+    Dist::Zilla.
+
+    The plugin accepts the following options:
+
+    *   version_regexp - regular expression that matches a tag containing a
+        version. It should capture the version into $1. Defaults to ^v(.+)$
+        which matches the default tag from Dist::Zilla::Plugin::Git::Tag
+
+    You can also set the "V" environment variable to override the new
+    version. To bootstrap a version for a distribution that has not been
+    released (and thus not tagged), you need to use this or else set
+    "version" in dist.ini (which should prevent this plugin from running).
+    After the first tagged release, you can remove "version" from dist.ini
+    and let this module handle it for you.
+
+    NOTE -- this module is a stop gap while Dist::Zilla is enhanced to allow
+    more sophisiticated version number manipulation and may be deprecated in
+    the future once those changes are complete.
+
+SEE ALSO
+    *   Dist::Zilla::Plugin::VersionFromPrev and
+        Dist::Zilla::Plugin::Git::LastVersion do something similar but in
+        what I find to be a more complicated way of doing things
+
+AUTHOR
+      David Golden <dagolden@cpan.org>
+
+COPYRIGHT AND LICENSE
+    This software is Copyright (c) 2010 by David Golden.
+
+    This is free software, licensed under:
+
+      The Apache License, Version 2.0, January 2004
+

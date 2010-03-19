@@ -1,0 +1,26 @@
+---
+abstract: 'provide a version number by bumping the last git release tag'
+author:
+  - 'David Golden <dagolden@cpan.org>'
+build_requires: {}
+configure_requires:
+  ExtUtils::MakeMaker: 6.11
+generated_by: 'Dist::Zilla version 1.100711'
+license: apache
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Dist-Zilla-Plugin-BumpVersionFromGit
+no_index:
+  directory:
+    - t
+    - xt
+    - examples
+provides:
+  Dist::Zilla::Plugin::BumpVersionFromGit:
+    file: lib/Dist/Zilla/Plugin/BumpVersionFromGit.pm
+    version: 0.001
+requires: {}
+resources:
+  repository: http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit
+version: 0.001
