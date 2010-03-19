@@ -21,8 +21,19 @@ my %WriteMakefileArgs = (
                        'BUILD_REQUIRES' => {},
                        'ABSTRACT' => 'provide a version number by bumping the last git release tag',
                        'EXE_FILES' => [],
-                       'VERSION' => '0.001',
-                       'PREREQ_PM' => {},
+                       'VERSION' => '0.002',
+                       'PREREQ_PM' => {
+                                        'Test::Exception' => '0.290',
+                                        'namespace::autoclean' => '0.090',
+                                        'version' => '0.800',
+                                        'Git::Wrapper' => '0.007',
+                                        'Test::More' => '0.88',
+                                        'Dist::Zilla' => '1.100711',
+                                        'Path::Class' => '0.170',
+                                        'Dist::Zilla::Role::VersionProvider' => '1.100711',
+                                        'Moose' => '0.990',
+                                        'Version::Next' => '0.001'
+                                      },
                        'LICENSE' => 'apache'
                      );
 
