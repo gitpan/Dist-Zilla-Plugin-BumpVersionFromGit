@@ -3,12 +3,13 @@ NAME
     bumping the last git release tag
 
 VERSION
-    version 0.002
+    version 0.003
 
 SYNOPSIS
     In your F<dist.ini>:
 
          [BumpVersionFromGit]
+         first_version = 0.001       ; this is the default
          version_regexp  = ^v(.+)$   ; this is the default
 
 DESCRIPTION
@@ -18,16 +19,18 @@ DESCRIPTION
 
     The plugin accepts the following options:
 
+    *   first_version - if the repository has no tags at all, this version
+        is used as the first version for the distribution. It defaults to
+        "0.001".
+
     *   version_regexp - regular expression that matches a tag containing a
         version. It should capture the version into $1. Defaults to ^v(.+)$
         which matches the default tag from Dist::Zilla::Plugin::Git::Tag
 
     You can also set the "V" environment variable to override the new
-    version. To bootstrap a version for a distribution that has not been
-    released (and thus not tagged), you need to use this or else set
-    "version" in dist.ini (which should prevent this plugin from running).
-    After the first tagged release, you can remove "version" from dist.ini
-    and let this module handle it for you.
+    version. This is useful if you need to bump to a specific version. For
+    example, if the last tag is 0.005 and you want to jump to 1.000 you can
+    set V = 1.000.
 
     NOTE -- this module is a stop gap while Dist::Zilla is enhanced to allow
     more sophisiticated version number manipulation and may be deprecated in

@@ -19,7 +19,7 @@ no_index:
 provides:
   Dist::Zilla::Plugin::BumpVersionFromGit:
     file: lib/Dist/Zilla/Plugin/BumpVersionFromGit.pm
-    version: 0.002
+    version: 0.003
 requires:
   Dist::Zilla: 1.100711
   Dist::Zilla::Role::VersionProvider: 1.100711
@@ -33,4 +33,4 @@ requires:
   version: 0.800
 resources:
   repository: http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit
-version: 0.002
+version: 0.003

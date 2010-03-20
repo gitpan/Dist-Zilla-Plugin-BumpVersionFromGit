@@ -10,7 +10,7 @@
 use strict;
 use warnings;
 package Dist::Zilla::Plugin::BumpVersionFromGit;
-our $VERSION = '0.002';
+our $VERSION = '0.003';
 # ABSTRACT: provide a version number by bumping the last git release tag
 
 use Git::Wrapper;
@@ -25,6 +25,8 @@ with 'Dist::Zilla::Role::VersionProvider';
 
 has version_regexp  => ( is => 'ro', isa=>'Str', default => '^v(.+)$' );
 
+has first_version  => ( is => 'ro', isa=>'Str', default => '0.001' );
+
 # -- role implementation
 
 sub provide_version {
@@ -38,11 +40,13 @@ sub provide_version {
   my $git  = Git::Wrapper->new('.');
   my $regexp = $self->version_regexp;
 
+  my @tags = $git->tag;
+  return $self->first_version unless @tags;
+
   # find highest version from tags
   my ($last_ver) =  sort { version->parse($b) <=> version->parse($a) }
   grep { eval { version->parse($_) }  }
-  map  { /$regexp/ ? $1 : ()          }
-  $git->tag;
+  map  { /$regexp/ ? $1 : ()          } @tags;
 
   $self->log_fatal("Could not determine last version from tags")
   unless defined $last_ver;
@@ -67,13 +71,14 @@ Dist::Zilla::Plugin::BumpVersionFromGit - provide a version number by bumping th
 
 =head1 VERSION
 
-version 0.002
+version 0.003
 
 =head1 SYNOPSIS
 
 In your FE<lt>dist.iniE<gt>:
 
      [BumpVersionFromGit]
+     first_version = 0.001       ; this is the default
      version_regexp  = ^v(.+)$   ; this is the default
 
 =head1 DESCRIPTION
@@ -88,6 +93,11 @@ The plugin accepts the following options:
 
 =item *
 
+first_version - if the repository has no tags at all, this version
+is used as the first version for the distribution.  It defaults to "0.001".
+
+=item *
+
 version_regexp - regular expression that matches a tag containing
 a version.  It should capture the version into $1.  Defaults to ^v(.+)$
 which matches the default tag from L<Dist::Zilla::Plugin::Git::Tag>
@@ -95,11 +105,8 @@ which matches the default tag from L<Dist::Zilla::Plugin::Git::Tag>
 =back
 
 You can also set the C<<< V >>> environment variable to override the new version.
-To bootstrap a version for a distribution that has not been released 
-(and thus not tagged), you need to use this or else set C<<< version >>> in
-dist.ini (which should prevent this plugin from running).  After the first
-tagged release, you can remove C<<< version >>> from dist.ini and let this module
-handle it for you.
+This is useful if you need to bump to a specific version.  For example, if
+the last tag is 0.005 and you want to jump to 1.000 you can set V = 1.000.
 
 B<NOTE> -- this module is a stop gap while Dist::Zilla is enhanced to
 allow more sophisiticated version number manipulation and may be
