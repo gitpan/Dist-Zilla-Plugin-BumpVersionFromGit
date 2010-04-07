@@ -1,5 +1,9 @@
 Revision history for Dist-Zilla-Plugin-BumpVersionFromGit
 
+0.004     2010-04-07 14:23:39 EST5EDT
+
+    - fix tests for new Dist::Zilla 2.0
+
 0.003     2010-03-20 14:00:58 EST5EDT
 
     - add 'first_version' attribute to initialize version when no tags
