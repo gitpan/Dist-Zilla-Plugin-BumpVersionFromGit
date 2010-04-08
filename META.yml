@@ -2,14 +2,7 @@
 abstract: 'provide a version number by bumping the last git release tag'
 author:
   - 'David Golden <dagolden@cpan.org>'
-build_requires:
-  Dist::Zilla::Tester: 0
-  File::Copy::Recursive: 0
-  File::Find: 0
-  File::Temp: 0
-  File::pushd: 0
-  Path::Class: 0
-  Test::More: 0.88
+build_requires: {}
 configure_requires:
   ExtUtils::MakeMaker: 6.31
 generated_by: 'Dist::Zilla version 2.100960'
@@ -27,16 +20,21 @@ no_index:
 provides:
   Dist::Zilla::Plugin::BumpVersionFromGit:
     file: lib/Dist/Zilla/Plugin/BumpVersionFromGit.pm
-    version: 0.004
+    version: 0.005
 recommends: {}
 requires:
   Dist::Zilla: 2
-  Dist::Zilla::Role::VersionProvider: 0
+  Dist::Zilla::Role::VersionProvider: 2
+  Dist::Zilla::Tester: 2
+  File::Copy::Recursive: 0
+  File::pushd: 1
   Git::Wrapper: 0
   Moose: 0
+  Path::Class: 0
+  Test::More: 0.88
   Version::Next: 0
-  namespace::autoclean: 0.09
+  namespace::autoclean: 0
   version: 0.80
 resources:
   repository: http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit
-version: 0.004
+version: 0.005

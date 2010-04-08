@@ -11,7 +11,7 @@ use strict;
 use warnings;
 package Dist::Zilla::Plugin::BumpVersionFromGit;
 BEGIN {
-  $Dist::Zilla::Plugin::BumpVersionFromGit::VERSION = '0.004';
+  $Dist::Zilla::Plugin::BumpVersionFromGit::VERSION = '0.005';
 }
 # ABSTRACT: provide a version number by bumping the last git release tag
 
@@ -74,7 +74,7 @@ Dist::Zilla::Plugin::BumpVersionFromGit - provide a version number by bumping th
 
 =head1 VERSION
 
-version 0.004
+version 0.005
 
 =head1 SYNOPSIS
 
@@ -115,7 +115,7 @@ B<NOTE> -- this module is a stop gap while Dist::Zilla is enhanced to
 allow more sophisiticated version number manipulation and may be
 deprecated in the future once those changes are complete.
 
-=for Pod::Coverage::TrustPod provide_version
+=for Pod::Coverage provide_version
 
 =head1 SEE ALSO
 

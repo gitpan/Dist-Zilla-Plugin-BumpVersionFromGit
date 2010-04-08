@@ -3,7 +3,7 @@ NAME
     bumping the last git release tag
 
 VERSION
-    version 0.004
+    version 0.005
 
 SYNOPSIS
     In your F<dist.ini>:
