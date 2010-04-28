@@ -11,7 +11,7 @@ use strict;
 use warnings;
 package Dist::Zilla::Plugin::BumpVersionFromGit;
 BEGIN {
-  $Dist::Zilla::Plugin::BumpVersionFromGit::VERSION = '0.005';
+  $Dist::Zilla::Plugin::BumpVersionFromGit::VERSION = '0.006';
 }
 # ABSTRACT: provide a version number by bumping the last git release tag
 
@@ -74,7 +74,7 @@ Dist::Zilla::Plugin::BumpVersionFromGit - provide a version number by bumping th
 
 =head1 VERSION
 
-version 0.005
+version 0.006
 
 =head1 SYNOPSIS
 
