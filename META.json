@@ -1,0 +1,68 @@
+{
+   "abstract" : "provide a version number by bumping the last git release tag",
+   "author" : [
+      "David Golden <dagolden@cpan.org>"
+   ],
+   "dynamic_config" : 0,
+   "generated_by" : "Dist::Zilla version 4.101831, CPAN::Meta::Converter version 2.101670",
+   "license" : [
+      "apache_2_0"
+   ],
+   "meta-spec" : {
+      "url" : "http://search.cpan.org/perldoc?CPAN::Meta::Spec",
+      "version" : "2"
+   },
+   "name" : "Dist-Zilla-Plugin-BumpVersionFromGit",
+   "no_index" : {
+      "directory" : [
+         "t",
+         "xt",
+         "examples",
+         "corpus"
+      ]
+   },
+   "prereqs" : {
+      "configure" : {
+         "requires" : {
+            "ExtUtils::MakeMaker" : "6.31"
+         }
+      },
+      "runtime" : {
+         "requires" : {
+            "Dist::Zilla" : "4",
+            "Dist::Zilla::Role::VersionProvider" : 0,
+            "Git::Wrapper" : 0,
+            "Moose" : 0,
+            "Version::Next" : 0,
+            "namespace::autoclean" : "0.09",
+            "perl" : "5.006",
+            "version" : "0.80"
+         }
+      },
+      "test" : {
+         "requires" : {
+            "Dist::Zilla::Tester" : 0,
+            "File::Copy::Recursive" : 0,
+            "File::Find" : 0,
+            "File::Temp" : 0,
+            "File::pushd" : 0,
+            "Path::Class" : 0,
+            "Test::More" : "0.88"
+         }
+      }
+   },
+   "provides" : {
+      "Dist::Zilla::Plugin::BumpVersionFromGit" : {
+         "file" : "lib/Dist/Zilla/Plugin/BumpVersionFromGit.pm",
+         "version" : "0.007"
+      }
+   },
+   "release_status" : "stable",
+   "resources" : {
+      "repository" : {
+         "url" : "http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit"
+      }
+   },
+   "version" : "0.007"
+}
+

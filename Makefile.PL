@@ -2,48 +2,53 @@
 use strict;
 use warnings;
 
-
+BEGIN { require 5.006; }
 
 use ExtUtils::MakeMaker 6.31;
 
 
 
 my %WriteMakefileArgs = (
-                       'test' => {
-                                   'TESTS' => 't/*.t'
-                                 },
-                       'NAME' => 'Dist::Zilla::Plugin::BumpVersionFromGit',
-                       'DISTNAME' => 'Dist-Zilla-Plugin-BumpVersionFromGit',
-                       'CONFIGURE_REQUIRES' => {
-                                                 'ExtUtils::MakeMaker' => '6.31'
-                                               },
-                       'AUTHOR' => 'David Golden <dagolden@cpan.org>',
-                       'BUILD_REQUIRES' => {},
-                       'ABSTRACT' => 'provide a version number by bumping the last git release tag',
-                       'EXE_FILES' => [],
-                       'VERSION' => '0.006',
-                       'PREREQ_PM' => {
-                                        'namespace::autoclean' => '0',
-                                        'File::pushd' => '1',
-                                        'Git::Wrapper' => '0',
-                                        'version' => '0.80',
-                                        'Test::More' => '0.88',
-                                        'Dist::Zilla' => '2.101170',
-                                        'Path::Class' => '0',
-                                        'File::Copy::Recursive' => '0',
-                                        'Version::Next' => '0',
-                                        'Moose' => '0'
-                                      },
-                       'LICENSE' => 'apache'
-                     );
+  'ABSTRACT' => 'provide a version number by bumping the last git release tag',
+  'AUTHOR' => 'David Golden <dagolden@cpan.org>',
+  'BUILD_REQUIRES' => {
+    'Dist::Zilla::Tester' => '0',
+    'File::Copy::Recursive' => '0',
+    'File::Find' => '0',
+    'File::Temp' => '0',
+    'File::pushd' => '0',
+    'Path::Class' => '0',
+    'Test::More' => '0.88'
+  },
+  'CONFIGURE_REQUIRES' => {
+    'ExtUtils::MakeMaker' => '6.31'
+  },
+  'DISTNAME' => 'Dist-Zilla-Plugin-BumpVersionFromGit',
+  'EXE_FILES' => [],
+  'LICENSE' => 'apache',
+  'NAME' => 'Dist::Zilla::Plugin::BumpVersionFromGit',
+  'PREREQ_PM' => {
+    'Dist::Zilla' => '4',
+    'Dist::Zilla::Role::VersionProvider' => '0',
+    'Git::Wrapper' => '0',
+    'Moose' => '0',
+    'Version::Next' => '0',
+    'namespace::autoclean' => '0.09',
+    'version' => '0.80'
+  },
+  'VERSION' => '0.007',
+  'test' => {
+    'TESTS' => 't/*.t'
+  }
+);
 
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
   my $br = delete $WriteMakefileArgs{BUILD_REQUIRES};
-  my $pp = $WriteMakefileArgs{PREREQ_PM}; 
+  my $pp = $WriteMakefileArgs{PREREQ_PM};
   for my $mod ( keys %$br ) {
     if ( exists $pp->{$mod} ) {
-      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod}; 
+      $pp->{$mod} = $br->{$mod} if $br->{$mod} > $pp->{$mod};
     }
     else {
       $pp->{$mod} = $br->{$mod};
