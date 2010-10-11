@@ -1,5 +1,5 @@
 ---
-abstract: 'provide a version number by bumping the last git release tag'
+abstract: 'DEPRECATED -- use Dist::Zilla::Plugin::Git::NextVersion instead'
 author:
   - 'David Golden <dagolden@cpan.org>'
 build_requires:
@@ -13,7 +13,7 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.31
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.101831, CPAN::Meta::Converter version 2.101670'
+generated_by: 'Dist::Zilla version 4.102341, CPAN::Meta::Converter version 2.102400'
 license: apache
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -28,7 +28,7 @@ no_index:
 provides:
   Dist::Zilla::Plugin::BumpVersionFromGit:
     file: lib/Dist/Zilla/Plugin/BumpVersionFromGit.pm
-    version: 0.007
+    version: 0.008
 requires:
   Dist::Zilla: 4
   Dist::Zilla::Role::VersionProvider: 0
@@ -39,5 +39,6 @@ requires:
   perl: 5.006
   version: 0.80
 resources:
-  repository: http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit
-version: 0.007
+  homepage: http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit/tree
+  repository: git://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit.git
+version: 0.008

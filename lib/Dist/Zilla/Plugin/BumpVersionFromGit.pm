@@ -1,19 +1,19 @@
-# 
+#
 # This file is part of Dist-Zilla-Plugin-BumpVersionFromGit
-# 
+#
 # This software is Copyright (c) 2010 by David Golden.
-# 
+#
 # This is free software, licensed under:
-# 
+#
 #   The Apache License, Version 2.0, January 2004
-# 
+#
 use strict;
 use warnings;
 package Dist::Zilla::Plugin::BumpVersionFromGit;
 BEGIN {
-  $Dist::Zilla::Plugin::BumpVersionFromGit::VERSION = '0.007';
+  $Dist::Zilla::Plugin::BumpVersionFromGit::VERSION = '0.008';
 }
-# ABSTRACT: provide a version number by bumping the last git release tag
+# ABSTRACT: DEPRECATED -- use Dist::Zilla::Plugin::Git::NextVersion instead
 
 use Dist::Zilla 4 ();
 use Git::Wrapper;
@@ -70,11 +70,11 @@ no Moose;
 
 =head1 NAME
 
-Dist::Zilla::Plugin::BumpVersionFromGit - provide a version number by bumping the last git release tag
+Dist::Zilla::Plugin::BumpVersionFromGit - DEPRECATED -- use Dist::Zilla::Plugin::Git::NextVersion instead
 
 =head1 VERSION
 
-version 0.007
+version 0.008
 
 =head1 SYNOPSIS
 
@@ -86,52 +86,15 @@ In your FE<lt>dist.iniE<gt>:
 
 =head1 DESCRIPTION
 
-This does the L<Dist::Zilla::Role::VersionProvider> role.  It finds the last
-version number from tags and increments it as the new version used by
-Dist::Zilla.
-
-The plugin accepts the following options:
-
-=over
-
-=item *
-
-first_version - if the repository has no tags at all, this version
-is used as the first version for the distribution.  It defaults to "0.001".
-
-=item *
-
-version_regexp - regular expression that matches a tag containing
-a version.  It should capture the version into $1.  Defaults to ^v(.+)$
-which matches the default tag from L<Dist::Zilla::Plugin::Git::Tag>
-
-=back
-
-You can also set the C<<< V >>> environment variable to override the new version.
-This is useful if you need to bump to a specific version.  For example, if
-the last tag is 0.005 and you want to jump to 1.000 you can set V = 1.000.
-
-B<NOTE> -- this module is a stop gap while Dist::Zilla is enhanced to
-allow more sophisiticated version number manipulation and may be
-deprecated in the future once those changes are complete.
+B<NOTE> This distribution is B<deprecated>.  The module has been
+reborn as L<Dist::Zilla::Plugin::NextVersion> and included in the
+L<Dist::Zilla::Plugin::Git> distribution.
 
 =for Pod::Coverage provide_version
 
-=head1 SEE ALSO
-
-=over
-
-=item *
-
-L<Dist::Zilla::Plugin::VersionFromPrev> and 
-L<Dist::Zilla::Plugin::Git::LastVersion> do something similar but in what
-I find to be a more complicated way of doing things
-
-=back
-
 =head1 AUTHOR
 
-  David Golden <dagolden@cpan.org>
+David Golden <dagolden@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 

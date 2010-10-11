@@ -1,10 +1,10 @@
 {
-   "abstract" : "provide a version number by bumping the last git release tag",
+   "abstract" : "DEPRECATED -- use Dist::Zilla::Plugin::Git::NextVersion instead",
    "author" : [
       "David Golden <dagolden@cpan.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 4.101831, CPAN::Meta::Converter version 2.101670",
+   "generated_by" : "Dist::Zilla version 4.102341, CPAN::Meta::Converter version 2.102400",
    "license" : [
       "apache_2_0"
    ],
@@ -54,15 +54,18 @@
    "provides" : {
       "Dist::Zilla::Plugin::BumpVersionFromGit" : {
          "file" : "lib/Dist/Zilla/Plugin/BumpVersionFromGit.pm",
-         "version" : "0.007"
+         "version" : "0.008"
       }
    },
    "release_status" : "stable",
    "resources" : {
+      "homepage" : "http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit/tree",
       "repository" : {
-         "url" : "http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit"
+         "type" : "git",
+         "url" : "git://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit.git",
+         "web" : "http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit/tree"
       }
    },
-   "version" : "0.007"
+   "version" : "0.008"
 }
 

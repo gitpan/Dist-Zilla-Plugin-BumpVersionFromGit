@@ -9,7 +9,7 @@ use ExtUtils::MakeMaker 6.31;
 
 
 my %WriteMakefileArgs = (
-  'ABSTRACT' => 'provide a version number by bumping the last git release tag',
+  'ABSTRACT' => 'DEPRECATED -- use Dist::Zilla::Plugin::Git::NextVersion instead',
   'AUTHOR' => 'David Golden <dagolden@cpan.org>',
   'BUILD_REQUIRES' => {
     'Dist::Zilla::Tester' => '0',
@@ -36,7 +36,7 @@ my %WriteMakefileArgs = (
     'namespace::autoclean' => '0.09',
     'version' => '0.80'
   },
-  'VERSION' => '0.007',
+  'VERSION' => '0.008',
   'test' => {
     'TESTS' => 't/*.t'
   }
