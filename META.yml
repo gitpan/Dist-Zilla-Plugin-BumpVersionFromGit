@@ -11,9 +11,9 @@ build_requires:
   Path::Class: 0
   Test::More: 0.88
 configure_requires:
-  ExtUtils::MakeMaker: 6.31
+  ExtUtils::MakeMaker: 6.30
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.102341, CPAN::Meta::Converter version 2.102400'
+generated_by: 'Dist::Zilla version 4.200009, CPAN::Meta::Converter version 2.110930'
 license: apache
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
@@ -25,10 +25,12 @@ no_index:
     - xt
     - examples
     - corpus
+  package:
+    - DB
 provides:
   Dist::Zilla::Plugin::BumpVersionFromGit:
     file: lib/Dist/Zilla/Plugin/BumpVersionFromGit.pm
-    version: 0.008
+    version: 0.009
 requires:
   Dist::Zilla: 4
   Dist::Zilla::Role::VersionProvider: 0
@@ -39,6 +41,7 @@ requires:
   perl: 5.006
   version: 0.80
 resources:
-  homepage: http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit/tree
-  repository: git://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit.git
-version: 0.008
+  bugtracker: http://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-BumpVersionFromGit
+  homepage: http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit
+  repository: http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit
+version: 0.009

@@ -1,19 +1,7 @@
-#
-# This file is part of Dist-Zilla-Plugin-BumpVersionFromGit
-#
-# This software is Copyright (c) 2010 by David Golden.
-#
-# This is free software, licensed under:
-#
-#   The Apache License, Version 2.0, January 2004
-#
 use strict;
 use warnings;
 package Dist::Zilla::Plugin::BumpVersionFromGit;
-BEGIN {
-  $Dist::Zilla::Plugin::BumpVersionFromGit::VERSION = '0.008';
-}
-# ABSTRACT: DEPRECATED -- use Dist::Zilla::Plugin::Git::NextVersion instead
+our $VERSION = '0.009'; # VERSION
 
 use Dist::Zilla 4 ();
 use Git::Wrapper;
@@ -64,6 +52,8 @@ __PACKAGE__->meta->make_immutable;
 no Moose;
 1;
 
+# ABSTRACT: DEPRECATED -- use Dist::Zilla::Plugin::Git::NextVersion instead
+
 
 
 =pod
@@ -74,7 +64,7 @@ Dist::Zilla::Plugin::BumpVersionFromGit - DEPRECATED -- use Dist::Zilla::Plugin:
 
 =head1 VERSION
 
-version 0.008
+version 0.009
 
 =head1 SYNOPSIS
 
@@ -87,10 +77,29 @@ In your FE<lt>dist.iniE<gt>:
 =head1 DESCRIPTION
 
 B<NOTE> This distribution is B<deprecated>.  The module has been
-reborn as L<Dist::Zilla::Plugin::NextVersion> and included in the
+reborn as L<Dist::Zilla::Plugin::Git::NextVersion> and included in the
 L<Dist::Zilla::Plugin::Git> distribution.
 
 =for Pod::Coverage provide_version
+
+=for :stopwords cpan testmatrix url annocpan anno bugtracker rt cpants kwalitee diff irc mailto metadata placeholders
+
+=head1 SUPPORT
+
+=head2 Bugs / Feature Requests
+
+Please report any bugs or feature requests by email to C<bug-dist-zilla-plugin-bumpversionfromgit at rt.cpan.org>, or through
+the web interface at L<http://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-BumpVersionFromGit>. You will be automatically notified of any
+progress on the request by the system.
+
+=head2 Source Code
+
+This is open source software.  The code repository is available for
+public review and contribution under the terms of the license.
+
+L<http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit>
+
+  git clone http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit
 
 =head1 AUTHOR
 
@@ -98,7 +107,7 @@ David Golden <dagolden@cpan.org>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2010 by David Golden.
+This software is Copyright (c) 2011 by David Golden.
 
 This is free software, licensed under:
 

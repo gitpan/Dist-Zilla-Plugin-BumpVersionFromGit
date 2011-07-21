@@ -5,6 +5,7 @@ META.json
 META.yml
 Makefile.PL
 README
+README.PATCHING
 Todo
 corpus/version-default/Changes
 corpus/version-default/dist.ini
@@ -22,3 +23,4 @@ xt/release/distmeta.t
 xt/release/pod-coverage.t
 xt/release/pod-syntax.t
 xt/release/portability.t
+xt/release/test-version.t

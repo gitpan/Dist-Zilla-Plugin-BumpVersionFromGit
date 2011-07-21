@@ -2,9 +2,9 @@
 use strict;
 use warnings;
 
-BEGIN { require 5.006; }
+use 5.006;
 
-use ExtUtils::MakeMaker 6.31;
+use ExtUtils::MakeMaker 6.30;
 
 
 
@@ -21,7 +21,7 @@ my %WriteMakefileArgs = (
     'Test::More' => '0.88'
   },
   'CONFIGURE_REQUIRES' => {
-    'ExtUtils::MakeMaker' => '6.31'
+    'ExtUtils::MakeMaker' => '6.30'
   },
   'DISTNAME' => 'Dist-Zilla-Plugin-BumpVersionFromGit',
   'EXE_FILES' => [],
@@ -36,7 +36,7 @@ my %WriteMakefileArgs = (
     'namespace::autoclean' => '0.09',
     'version' => '0.80'
   },
-  'VERSION' => '0.008',
+  'VERSION' => '0.009',
   'test' => {
     'TESTS' => 't/*.t'
   }

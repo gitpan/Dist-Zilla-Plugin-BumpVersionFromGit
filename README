@@ -3,7 +3,7 @@ NAME
     Dist::Zilla::Plugin::Git::NextVersion instead
 
 VERSION
-    version 0.008
+    version 0.009
 
 SYNOPSIS
     In your F<dist.ini>:
@@ -14,14 +14,31 @@ SYNOPSIS
 
 DESCRIPTION
     NOTE This distribution is deprecated. The module has been reborn as
-    Dist::Zilla::Plugin::NextVersion and included in the
+    Dist::Zilla::Plugin::Git::NextVersion and included in the
     Dist::Zilla::Plugin::Git distribution.
+
+SUPPORT
+  Bugs / Feature Requests
+    Please report any bugs or feature requests by email to
+    "bug-dist-zilla-plugin-bumpversionfromgit at rt.cpan.org", or through
+    the web interface at
+    <http://rt.cpan.org/Public/Dist/Display.html?Name=Dist-Zilla-Plugin-Bump
+    VersionFromGit>. You will be automatically notified of any progress on
+    the request by the system.
+
+  Source Code
+    This is open source software. The code repository is available for
+    public review and contribution under the terms of the license.
+
+    <http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit>
+
+      git clone http://github.com/dagolden/dist-zilla-plugin-bumpversionfromgit
 
 AUTHOR
     David Golden <dagolden@cpan.org>
 
 COPYRIGHT AND LICENSE
-    This software is Copyright (c) 2010 by David Golden.
+    This software is Copyright (c) 2011 by David Golden.
 
     This is free software, licensed under:
 
